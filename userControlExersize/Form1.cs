@@ -30,7 +30,7 @@ namespace userControlExersize
         private void Form1_Shown(object sender, EventArgs e)
         {
             DirectoryInfo dir = new DirectoryInfo(Folder);
-            JpgFiles = dir.EnumerateFiles("*.jpg").ToArray();
+            JpgFiles = dir.EnumerateFiles("*.jpg",SearchOption.AllDirectories).ToArray();
             
             MyControls = new List<PictureControl>();
             foreach (FileInfo picture in JpgFiles)
